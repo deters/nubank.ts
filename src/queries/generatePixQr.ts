@@ -1,6 +1,12 @@
-import INubankQueryObject from '../interfaces/INubankQuery';
+import INubankQueryObject from "../interfaces/INubankQuery.ts"
 
-export default function (amount: number, transactionId: string, message: string, pixAlias: string, savingsAccountId: string): INubankQueryObject {
+export default function (
+  amount: number,
+  transactionId: string,
+  message: string,
+  pixAlias: string,
+  savingsAccountId: string
+): INubankQueryObject {
   const query = `
     mutation createPaymentRequest($createPaymentRequestInput: CreatePaymentRequestInput) {
       createPaymentRequest(input: $createPaymentRequestInput) {
@@ -15,16 +21,19 @@ export default function (amount: number, transactionId: string, message: string,
         }
       }
     }
-  `;
+  `
   const variables = {
     createPaymentRequestInput: {
       amount,
       pixAlias,
       savingsAccountId,
       message,
-      transactionId
-    }
-  };
+      transactionId,
+    },
+  }
 
-  return { data: { query, variables }, path: 'createPaymentRequest.paymentRequest' };
+  return {
+    data: { query, variables },
+    path: "createPaymentRequest.paymentRequest",
+  }
 }

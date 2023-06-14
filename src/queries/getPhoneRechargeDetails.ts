@@ -1,4 +1,4 @@
-import INubankQueryObject from '../interfaces/INubankQuery';
+import INubankQueryObject from "../interfaces/INubankQuery.ts"
 
 export default function (phoneRechargeRequestId: string): INubankQueryObject {
   const query = `
@@ -44,11 +44,11 @@ export default function (phoneRechargeRequestId: string): INubankQueryObject {
         }
       }
     }
-  `;
+  `
 
   const variables = {
-    phoneRechargeRequestId
-  };
+    phoneRechargeRequestId,
+  }
 
-  return { data: { query, variables }, path: 'viewer.phoneRechargeStatus' };
+  return { data: { query, variables }, path: "viewer.phoneRechargeStatus" }
 }

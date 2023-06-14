@@ -1,7 +1,7 @@
-import INubankQueryObject from '../interfaces/INubankQuery';
+import INubankQueryObject from "../interfaces/INubankQuery.ts"
 
 export default function (feedCursor?: string): INubankQueryObject {
-  const cursor = feedCursor ? feedCursor : null;
+  const cursor = feedCursor ? feedCursor : null
   const query = `
     {
       viewer {
@@ -29,7 +29,7 @@ export default function (feedCursor?: string): INubankQueryObject {
         }
       }
     }
-  `;
+  `
 
-  return { data: { query }, path: 'viewer.savingsAccount.feedItems' };
+  return { data: { query }, path: "viewer.savingsAccount.feedItems" }
 }

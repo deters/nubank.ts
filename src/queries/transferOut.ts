@@ -1,6 +1,9 @@
-import INubankQueryObject from '../interfaces/INubankQuery';
+import INubankQueryObject from "../interfaces/INubankQuery.ts"
 
-export default function (bankAccountId: string, amount: number): INubankQueryObject {
+export default function (
+  bankAccountId: string,
+  amount: number
+): INubankQueryObject {
   const query = `
     mutation($input: TransferOutRequestInput!) {
       transferOutRequest(input: $input) {
@@ -39,14 +42,14 @@ export default function (bankAccountId: string, amount: number): INubankQueryObj
         }
       }
     }
-  `;
+  `
   const variables = {
     input: {
       bankAccountId,
       amount,
-      transferType: 'PIX'
-    }
-  };
+      transferType: "PIX",
+    },
+  }
 
-  return { data: { query, variables }, path: 'transferOutRequest' };
+  return { data: { query, variables }, path: "transferOutRequest" }
 }

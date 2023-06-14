@@ -1,4 +1,4 @@
-import INubankQueryObject from '../interfaces/INubankQuery';
+import INubankQueryObject from "../interfaces/INubankQuery.ts"
 
 export default function (id: string): INubankQueryObject {
   const query = `
@@ -20,7 +20,10 @@ export default function (id: string): INubankQueryObject {
       }
     }
       
-  `;
+  `
 
-  return { data: { query }, path: 'viewer.savingsAccount.getGenericReceiptScreen' };
+  return {
+    data: { query },
+    path: "viewer.savingsAccount.getGenericReceiptScreen",
+  }
 }

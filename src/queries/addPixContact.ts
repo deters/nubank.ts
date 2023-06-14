@@ -1,4 +1,4 @@
-import INubankQueryObject from '../interfaces/INubankQuery';
+import INubankQueryObject from "../interfaces/INubankQuery.ts"
 
 export default function (pixKey: string): INubankQueryObject {
   const query = `
@@ -29,14 +29,17 @@ export default function (pixKey: string): INubankQueryObject {
             }
         }
     }
-`;
+`
   const variables = {
     input: {
       dictInput: {
         dictKey: pixKey,
       },
     },
-  };
+  }
 
-  return { data: { query, variables }, path: 'createExternalBankAccountForTransferOut' };
+  return {
+    data: { query, variables },
+    path: "createExternalBankAccountForTransferOut",
+  }
 }

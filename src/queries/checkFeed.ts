@@ -1,4 +1,4 @@
-import INubankQueryObject from '../interfaces/INubankQuery';
+import INubankQueryObject from "../interfaces/INubankQuery.ts"
 
 export default function (limit: number): INubankQueryObject {
   const query = `
@@ -15,7 +15,7 @@ export default function (limit: number): INubankQueryObject {
         }
       }
     }
-  `;
+  `
 
-  return { data: { query }, path: 'viewer.savingsAccount.feed' };
+  return { data: { query }, path: "viewer.savingsAccount.feed" }
 }
