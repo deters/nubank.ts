@@ -79,7 +79,7 @@ export default class NubankTS implements INubankTS {
     this.password = password
 
     this.certificate = new Buffer(Deno.readFile(certificatePath))
-    this.discovery = new Discovery()
+    this.discovery = new Discovery(fetch)
     this.loadMe()
   }
 

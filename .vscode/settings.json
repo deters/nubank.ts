@@ -1,4 +1,9 @@
 {
   "files.eol": "\n",
   "editor.tabSize": 2,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#2E2F03",
+    "titleBar.activeBackground": "#414204",
+    "titleBar.activeForeground": "#FBFCD4"
+  },
 }
