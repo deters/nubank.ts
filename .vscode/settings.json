@@ -6,4 +6,6 @@
     "titleBar.activeBackground": "#414204",
     "titleBar.activeForeground": "#FBFCD4"
   },
+  "deno.enable": true,
+  "deno.unstable": true
 }

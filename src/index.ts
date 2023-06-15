@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 import { Buffer } from "https://deno.land/std/io/buffer.ts"
 
 import Discovery from "./utils/discovery.ts"
@@ -92,7 +93,7 @@ export default class NubankTS implements INubankTS {
     if (!this.token) {
       if (!this.discovery.proxyListAppUrl)
         await this.discovery.updateProxyUrls()
-      const { access_token } = await this.NubankPostRequest(
+      const { access_token } = await this.NubankPostRequestToken(
         this.discovery.getAppUrl("token"),
         {
           grant_type: "password",
@@ -139,6 +140,19 @@ export default class NubankTS implements INubankTS {
       responseData.data.__typename === "RequestError" ? "error" : "data"
 
     return { headers: response.headers, [keyName]: responseData.data }
+  }
+
+  async NubankPostRequestToken(url: string, body: unknown) {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        ...BASE_HEADERS,
+        accept: "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+
+    return response
   }
 
   async NubankPostRequest(url: string, body: unknown) {
