@@ -1,3 +1,6 @@
+
+   Tentativa de usar a biblioteca abaixo com deno. Não é possível, pois o deno não suporta certificado de cliente.
+
 # Nubank.TS
 Realize operações que você faz no app do nubank pelo node.js Baseado na ([versão python](https://github.com/andreroggeri/pynubank/) que é baseada nessa outra [versão js](https://github.com/Astrocoders/nubank-api))
 
